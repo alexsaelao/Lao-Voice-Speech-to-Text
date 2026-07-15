@@ -22,6 +22,15 @@
     "zh-CN": { unsupported: "此页面不支持语音识别", noInput: "请先选择网页中的输入框", listening: "正在聆听… 请开始说话", ready: "准备就绪", noTarget: "未找到可用输入框", sent: "已自动发送到输入框", preview: "准备就绪 · 文字在预览中", microphone: "请在 Chrome 中允许使用麦克风", retry: "请再说一次", selected: "已选择输入框 · 点击侧边栏麦克风" },
   };
 
+  Object.assign(messages["lo-LA"], {
+    noInput: "ກະລຸນາກົດບ່ອນທີ່ຈະພິມກ່ອນ",
+    noTarget: "ບໍ່ພົບບ່ອນທີ່ຈະພິມ",
+    sent: "ພິມຂໍ້ຄວາມໃຫ້ແລ້ວ",
+    preview: "ພ້ອມແລ້ວ · ເບິ່ງຂໍ້ຄວາມໄດ້ດ້ານລຸ່ມ",
+    microphone: "ກະລຸນາອະນຸຍາດໃຊ້ໄມໂຄຣໂຟນໃນ Chrome",
+    selected: "ກົດບ່ອນທີ່ຈະພິມແລ້ວ · ກົດຮູບໄມໂຄຣໂຟນ",
+  });
+
   chrome.storage.local.get({ autoSend: true, language: "lo-LA" }).then(({ autoSend: saved, language }) => {
     autoSend = Boolean(saved);
     speechLanguage = language;

@@ -28,3 +28,7 @@ Supported recognition languages:
 - With it disabled, the transcript stays in the Preview area and can be copied or cleared manually.
 
 The extension works only on pages where Chrome allows content scripts to run.
+
+## Privacy
+
+Read the repository [Privacy Policy](../PRIVACY.md).

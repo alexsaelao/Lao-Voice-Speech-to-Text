@@ -15,7 +15,7 @@ let panelListening = false;
 let currentLanguage = "lo-LA";
 
 const ui = {
-  "lo-LA": { brandSubtitle: "ປ່ຽນສຽງເປັນຂໍ້ຄວາມ", kicker: "ປ່ຽນສຽງເປັນຂໍ້ຄວາມ", title: "ເວົ້າພາສາລາວ", titleAccent: "ໃສ່ input", intro: "ເລືອກ input ແລ້ວເວົ້າໄດ້ເລີຍ", ready: "ພ້ອມໃຊ້ງານ", previewTitle: "ຕົວຢ່າງຂໍ້ຄວາມ", previewPlaceholder: "ຂໍ້ຄວາມຈາກສຽງຈະສະແດງຢູ່ບ່ອນນີ້...", copy: "ກ໊ອບປີ້", clear: "ລ້າງ", autoTitle: "ສົ່ງເຂົ້າ input ຫຼັງຢຸດເວົ້າ", autoDescription: "ເປີດເພື່ອສົ່ງ Preview ເຂົ້າ input ອັດຕະໂນມັດ", shortcut: "ເລີ່ມ–ຢຸດ", privacy: "ປິດໂໝດນີ້ເພື່ອໃຊ້ input ທີ່ເລືອກເທົ່ານັ້ນ", copied: "ກ໊ອບປີ້ແລ້ວ", readyToSend: "ພ້ອມສົ່ງ", typing: "ກຳລັງພິມ...", start: "ເລີ່ມເວົ້າ", stop: "ຢຸດເວົ້າ", openPage: "ເປີດໜ້າເວັບກ່ອນ", reloadPage: "ໂຫຼດໜ້າເວັບໃໝ່ ແລ້ວລອງໃໝ່" },
+  "lo-LA": { brandSubtitle: "ປ່ຽນສຽງເປັນຂໍ້ຄວາມ", kicker: "ປ່ຽນສຽງເປັນຂໍ້ຄວາມ", title: "ເວົ້າພາສາລາວ", titleAccent: "ໃສ່ input", intro: "ເລືອກ input ແລ້ວເວົ້າໄດ້ເລີຍ", ready: "ພ້ອມໃຊ້ງານ", suggestionsTitle: "ຄຳແນະນຳ", suggestionsHint: "ກົດເພື່ອໃສ່ໃນ input", suggestions: ["ສະບາຍດີ", "ຂອບໃຈ", "ກະລຸນາ", "ແມ່ນແລ້ວ", "ບໍ່ແມ່ນ"], previewTitle: "ຕົວຢ່າງຂໍ້ຄວາມ", previewPlaceholder: "ຂໍ້ຄວາມຈາກສຽງຈະສະແດງຢູ່ບ່ອນນີ້...", copy: "ກ໊ອບປີ້", clear: "ລ້າງ", autoTitle: "ສົ່ງເຂົ້າ input ຫຼັງຢຸດເວົ້າ", autoDescription: "ເປີດເພື່ອສົ່ງ Preview ເຂົ້າ input ອັດຕະໂນມັດ", shortcut: "ເລີ່ມ–ຢຸດ", privacy: "ປິດໂໝດນີ້ເພື່ອໃຊ້ input ທີ່ເລືອກເທົ່ານັ້ນ", copied: "ກ໊ອບປີ້ແລ້ວ", readyToSend: "ພ້ອມສົ່ງ", typing: "ກຳລັງພິມ...", start: "ເລີ່ມເວົ້າ", stop: "ຢຸດເວົ້າ", openPage: "ເປີດໜ້າເວັບກ່ອນ", reloadPage: "ໂຫຼດໜ້າເວັບໃໝ່ ແລ້ວລອງໃໝ່" },
   "th-TH": { brandSubtitle: "ส่วนขยายการพูด", kicker: "เปลี่ยนเสียงเป็นข้อความ", title: "พูดภาษาไทย", titleAccent: "ใส่ใน input", intro: "เลือก input แล้วกดไมโครโฟนเพื่อพูด", ready: "พร้อมใช้งาน", previewTitle: "ตัวอย่างข้อความ", previewPlaceholder: "ข้อความจากเสียงจะแสดงที่นี่...", copy: "คัดลอก", clear: "ล้าง", autoTitle: "ส่งเข้า input หลังหยุดพูด", autoDescription: "เปิดเพื่อส่ง Preview เข้า input อัตโนมัติ", shortcut: "เริ่ม–หยุด", privacy: "ปิดโหมดนี้เพื่อเก็บข้อความไว้ใน Preview เท่านั้น", copied: "คัดลอกแล้ว", readyToSend: "พร้อมส่ง", typing: "กำลังพิมพ์...", start: "เริ่มพูด", stop: "หยุดพูด", openPage: "กรุณาเปิดหน้าเว็บก่อน", reloadPage: "รีโหลดหน้าเว็บแล้วลองใหม่" },
   "en-US": { brandSubtitle: "Speech to Text", kicker: "SPEECH TO TEXT", title: "Speak English", titleAccent: "to any input", intro: "Select an input, then press the microphone", ready: "Ready", previewTitle: "TEXT PREVIEW", previewPlaceholder: "Your speech will appear here...", copy: "Copy", clear: "Clear", autoTitle: "Send to input after speaking", autoDescription: "Automatically send the preview after you stop", shortcut: "Start–stop", privacy: "Turn this off to keep text in Preview only", copied: "Copied", readyToSend: "Ready to send", typing: "Typing...", start: "Start speaking", stop: "Stop speaking", openPage: "Open a web page first", reloadPage: "Reload the page and try again" },
   "vi-VN": { brandSubtitle: "Tiện ích giọng nói", kicker: "GIỌNG NÓI THÀNH VĂN BẢN", title: "Nói tiếng Việt", titleAccent: "vào input", intro: "Chọn ô nhập, rồi nhấn mic để nói", ready: "Sẵn sàng", previewTitle: "XEM TRƯỚC VĂN BẢN", previewPlaceholder: "Văn bản từ giọng nói sẽ xuất hiện ở đây...", copy: "Sao chép", clear: "Xóa", autoTitle: "Gửi vào input sau khi nói", autoDescription: "Tự gửi Preview sau khi bạn dừng nói", shortcut: "Bắt đầu–dừng", privacy: "Tắt để chỉ giữ văn bản trong Preview", copied: "Đã sao chép", readyToSend: "Sẵn sàng gửi", typing: "Đang nhập...", start: "Bắt đầu nói", stop: "Dừng nói", openPage: "Hãy mở một trang web trước", reloadPage: "Tải lại trang rồi thử lại" },
@@ -25,6 +25,14 @@ const ui = {
 Object.assign(ui["th-TH"], { brandSubtitle: "เปลี่ยนเสียงเป็นข้อความ" });
 Object.assign(ui["vi-VN"], { brandSubtitle: "Giọng nói thành văn bản" });
 Object.assign(ui["zh-CN"], { brandSubtitle: "语音转文字" });
+Object.assign(ui["lo-LA"], {
+  titleAccent: "ພິມໃຫ້ອັດຕະໂນມັດ",
+  intro: "ກົດບ່ອນທີ່ຈະພິມ ແລ້ວກົດຮູບໄມໂຄຣໂຟນ",
+  suggestionsHint: "ກົດເພື່ອພິມໃສ່",
+  autoTitle: "ພິມໃສ່ໃຫ້ ຫຼັງຢຸດເວົ້າ",
+  autoDescription: "ເປີດເພື່ອໃຫ້ຂໍ້ຄວາມພິມໃສ່ອັດຕະໂນມັດ",
+  privacy: "ປິດໂໝດນີ້ເພື່ອເບິ່ງຂໍ້ຄວາມກ່ອນພິມໃສ່",
+});
 
 function t(key) {
   return ui[currentLanguage]?.[key] || ui["en-US"][key] || key;

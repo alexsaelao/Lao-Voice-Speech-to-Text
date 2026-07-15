@@ -23,3 +23,7 @@ Then open [http://localhost:4173](http://localhost:4173), select a language, and
 ## Chrome extension
 
 See [chrome-extension/README.md](chrome-extension/README.md) for installation and usage instructions.
+
+## Privacy
+
+Read the [Privacy Policy](PRIVACY.md).
