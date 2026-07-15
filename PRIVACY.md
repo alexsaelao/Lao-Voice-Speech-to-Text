@@ -22,7 +22,7 @@ The extension does not maintain a developer-operated database of speech, transcr
 
 ## Permissions
 
-Lao Voice uses website access only to locate the editable field chosen by the user and insert the transcript into that field. It uses the Chrome Side Panel to show the controls and Chrome storage to save local preferences.
+Lao Voice uses access to the current tab only after the user opens the extension. This access is used to locate the editable field chosen by the user and insert the transcript into that field. It uses the Chrome Side Panel to show the controls and Chrome storage to save local preferences.
 
 ## Your choices
 

@@ -54,10 +54,17 @@ function activeTab() {
   return chrome.tabs.query({ active: true, currentWindow: true }).then((tabs) => tabs[0]);
 }
 
+async function sendToActiveTab(tab, message) {
+  if (!tab?.id) throw new Error("No active tab");
+  const injected = await chrome.runtime.sendMessage({ type: "ensure-content-script", tabId: tab.id });
+  if (!injected?.ok) throw new Error("Cannot access this page");
+  return chrome.tabs.sendMessage(tab.id, message);
+}
+
 async function setAutoSend(enabled) {
   await chrome.storage.local.set({ autoSend: enabled });
   const tab = await activeTab();
-  if (tab?.id) chrome.tabs.sendMessage(tab.id, { type: "set-auto-send", enabled }).catch(() => {});
+  if (tab?.id) sendToActiveTab(tab, { type: "set-auto-send", enabled }).catch(() => {});
 }
 
 async function setLanguage(language, label, icon) {
@@ -70,7 +77,7 @@ async function setLanguage(language, label, icon) {
   languageButton.setAttribute("aria-expanded", "false");
   languageOptions.forEach((option) => option.setAttribute("aria-selected", String(option.dataset.language === language)));
   const tab = await activeTab();
-  if (tab?.id) chrome.tabs.sendMessage(tab.id, { type: "set-language", language }).catch(() => {});
+  if (tab?.id) sendToActiveTab(tab, { type: "set-language", language }).catch(() => {});
 }
 
 function renderState(message, listening) {
@@ -89,7 +96,7 @@ async function toggleVoiceFromPanel() {
   const tab = await activeTab();
   if (!tab?.id) return renderState(t("openPage"), false);
   try {
-    await chrome.tabs.sendMessage(tab.id, { type: "toggle-voice" });
+    await sendToActiveTab(tab, { type: "toggle-voice" });
   } catch {
     renderState(t("reloadPage"), false);
   }
@@ -158,5 +165,5 @@ chrome.runtime.onMessage.addListener((message) => {
 });
 
 activeTab().then((tab) => {
-  if (tab?.id) chrome.tabs.sendMessage(tab.id, { type: "get-voice-state" }).catch(() => {});
+  if (tab?.id) sendToActiveTab(tab, { type: "get-voice-state" }).catch(() => {});
 });

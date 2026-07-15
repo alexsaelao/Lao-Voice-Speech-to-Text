@@ -18,8 +18,8 @@ Supported recognition languages:
 4. Choose the `chrome-extension` folder.
 5. Click the extension icon to open the Side Panel.
 6. Select the recognition language from the language menu.
-7. Open any website and select an input, textarea, or contenteditable field.
-8. Press the microphone button and allow microphone access.
+7. Open any website and select an input, textarea, or contenteditable field before opening the extension.
+8. Click the extension icon to grant access to the current tab, then press the microphone button and allow microphone access.
 9. Press the microphone again, or press `Alt` / `Option` in the Side Panel, to stop recording.
 
 ## Sending text

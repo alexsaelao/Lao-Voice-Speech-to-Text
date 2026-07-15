@@ -1,6 +1,9 @@
 (function () {
   "use strict";
 
+  if (globalThis.__laoVoiceContentLoaded) return;
+  globalThis.__laoVoiceContentLoaded = true;
+
   const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (!Recognition) {
     try { chrome.runtime.sendMessage({ type: "voice-state", status: "Chrome ບໍ່ຮອງຮັບ Speech Recognition ໃນໜ້ານີ້", listening: false }); } catch {}
@@ -39,6 +42,8 @@
   const isEditable = (element) => element instanceof HTMLInputElement
     || element instanceof HTMLTextAreaElement
     || element?.isContentEditable;
+
+  focusedField = isEditable(document.activeElement) ? document.activeElement : null;
 
   function message(key) {
     return messages[speechLanguage]?.[key] || messages["en-US"][key] || key;
